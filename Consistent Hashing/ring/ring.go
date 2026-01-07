@@ -71,3 +71,20 @@ func (r *Ring) GetNode(key string) string {
 
 	return r.nodes[r.keys[idx]]
 }
+
+
+func (r *Ring) AddNodeWithWeight(node string, weight int) {
+	totalReplicas := r.replicas * weight
+
+	for i := 0; i < totalReplicas; i++ {
+		vnodeKey := node + "#" + strconv.Itoa(i)
+		h := hash.Hash(vnodeKey)
+
+		r.nodes[h] = node
+		r.keys = append(r.keys, h)
+	}
+
+	sort.Slice(r.keys, func(i, j int) bool {
+		return r.keys[i] < r.keys[j]
+	})
+}

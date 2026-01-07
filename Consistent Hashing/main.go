@@ -3,5 +3,5 @@ package main
 import "consistent-hashing/demo"
 
 func main() {
-	demo.CompareNaiveVsConsistent()
+	demo.WeightedNodeDemo()
 }
