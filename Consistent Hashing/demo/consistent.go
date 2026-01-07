@@ -6,15 +6,18 @@ import (
 )
 
 func ConsistentDemo() {
-	r := ring.NewRing()
+	r := ring.NewRing(100) // 100 virtual nodes per physical node
 
 	r.AddNode("nodeA")
 	r.AddNode("nodeB")
 	r.AddNode("nodeC")
+	r.AddNode("nodeD")
+	r.AddNode("nodeE")
 
 	keys := []string{
 		"user1", "user2", "user3",
-		"user4", "user5",
+		"user4", "user5", "user6",
+		"user7", "user8", "user9",
 	}
 
 	fmt.Println("---- Before removing node ----")
