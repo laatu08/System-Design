@@ -7,3 +7,6 @@ func Hash(key string) uint32 {
 	h.Write([]byte(key))
 	return h.Sum32()
 }
+
+
+// Fowler–Noll–Vo (FNV) hash algorithm.
