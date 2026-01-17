@@ -25,7 +25,7 @@ func KeyMovementDemo() {
 	}
 
 	// Step 2: remove a node
-	fmt.Println("Removing nodeB...\n")
+	fmt.Println("Removing nodeB...")
 	r.RemoveNode("nodeB")
 
 	// Step 3: reassignment

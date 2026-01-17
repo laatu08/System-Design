@@ -31,7 +31,7 @@ func LargeKeyTest() {
 	}
 
 	// Remove one node
-	fmt.Println("\nRemoving nodeB...\n")
+	fmt.Println("\nRemoving nodeB...")
 	r.RemoveNode("nodeB")
 
 	// Recount after removal
